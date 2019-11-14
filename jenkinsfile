@@ -33,7 +33,7 @@ pipeline{
 		  
 	post {
         always {
-            archiveArtifacts artifacts: 'emailable-report.html', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'target/surefire-reports/*', onlyIfSuccessful: true
         }
     }
     
