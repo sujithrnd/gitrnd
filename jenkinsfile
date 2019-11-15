@@ -12,7 +12,7 @@ pipeline{
 						    
 						     echo "bbbbb"
 								      
-								        echo "111111111111111111111"
+								        echo "111111111111111111111a"
 								      
 								       echo  ${JENKINS_HOME}
 								        echo "111111111111111111111.11111"
