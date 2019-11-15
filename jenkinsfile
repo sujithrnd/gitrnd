@@ -16,10 +16,11 @@ pipeline{
 								      
 								       echo  env.JENKINS_HOME
 								        echo "111111111111111111111.11111"
-								       echo  env.JENKINS_HOME\jobs\env.JOB_NAME\builds\env.BUILD_NUMBER\log >> log.txt					       
+								      // echo  env.JENKINS_HOME\jobs\env.JOB_NAME\builds\env.BUILD_NUMBER\log >> log.txt
+								      type $JENKINS_HOME/jobs/$JOB_NAME/builds/lastSuccessfulBuild/log > log.txt					       
 								      
 								       
-								        echo "22222222"
+								        echo "22222222a"
 								      
 						    
 					           }
