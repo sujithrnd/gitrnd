@@ -41,17 +41,8 @@ pipeline{
 						        }
 				    }
 			}
-   }
+   }	  
 
-         
-
-
-			
-		  
-	post {
-        always {
-            archiveArtifacts artifacts: 'target/surefire-reports/*', onlyIfSuccessful: false
-        }
  
     
 }		  
