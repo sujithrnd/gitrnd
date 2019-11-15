@@ -8,19 +8,24 @@ pipeline{
 				    steps {
 				     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
 				    echo env.JOB_NAME
-				     echo "bbbbbbbbbbbbbbb"
+				    def job=env.JOB_NAME
+				    def buildNum=env.BUILD_NUMBER
+				     echo job
+				     echo buildNum
+				     echo "bbbbb"
 						      
 						        echo "111111111111111111111"
 						        echo build.project.name
 						        echo build.project.buildnumber
 						          echo "2222222222222222222222"
-						          
-						            def logContent = Jenkins.getInstance()
-						                .getItemByFullName(System.getenv("JOB_NAME"))
-						                .getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER")))
-						                .logFile.text
+						          script{
+						            def logContent = Jenkins.getInstance().job.buildNum.logFile.text
+						               // .getItemByFullName(System.getenv("JOB_NAME"))
+						               // .getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER")))
+						                //.logFile.text
 						            // copy the log in the job's own workspace
 						            writeFile file: "buildlog.txt", text: logContent
+						            }
 						      
 				    }
 			}
