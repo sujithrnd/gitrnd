@@ -6,6 +6,9 @@ pipeline{
 
          stage('save log build') {
 				    steps {
+				     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
+				    echo env.JOB_NAME
+				     echo "bbbbbbbbbbbbbbb"
 						        script {
 						        echo "111111111111111111111"
 						        echo build.project.name
