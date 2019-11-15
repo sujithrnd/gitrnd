@@ -9,18 +9,17 @@ pipeline{
 				     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
 				    echo env.JOB_NAME
 				    
-				     echo job
-				     echo buildNum
+				    
 				     echo "bbbbb"
 						      
 						        echo "111111111111111111111"
-						        echo build.project.name
-						        echo build.project.buildnumber
+						        echocurrentBuild.rawBuild.log
+						       
 						          echo "2222222222222222222222"
 						          script{
 						            def logContent = Jenkins.getInstance().getItemByFullName(System.getenv("JOB_NAME")).getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER"))).logFile.text
 						            // copy the log in the job's own workspace
-						            writeFile file: "buildlog.txt", text: logContent
+						            writeFile file: "buildlog.txt", text: currentBuild.rawBuild.log
 						            }
 						      
 				    }
