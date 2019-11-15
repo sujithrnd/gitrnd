@@ -12,11 +12,11 @@ pipeline{
 						    
 						     echo "bbbbb"
 								      
-								        echo "111111111111111111111a"
+								        echo "111111111111111111111b"
 								      
-								       echo  ${JENKINS_HOME}
+								       echo  env.JENKINS_HOME
 								        echo "111111111111111111111.11111"
-								       echo  ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
+								       echo  env.JENKINS_HOME/jobs/env.JOB_NAME/builds/env.BUILD_NUMBER/log >> log.txt
 								       
 								       //cat ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
 								       
