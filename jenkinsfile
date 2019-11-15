@@ -8,7 +8,7 @@ pipeline{
 						    steps {
 						 
 								      
-								        echo "aaaaaaaaaaaaaaaaaaa"
+								        echo "aaaaaaaaaaaaaaaaaaa.1"
 								      
 								       echo  env.JENKINS_HOME
 								        echo "111111111111111111111.11111"
@@ -16,9 +16,11 @@ pipeline{
 								     //bat type env.JENKINS_HOME/jobs/env.JOB_NAME/builds/env.BUILD_NUMBER/log > log.txt
 								    // bat dir	
 								   //   bat echo  C:\Users\skarthikeyan\.jenkins\jobs\Pipeline\builds\30\log >log.txt				       
+								      script{
 								      String fileContents = new File(env.JENKINS_HOME+"/jobs/"+env.JOB_NAME+"/builds/"+env.BUILD_NUMBER+"/"log").text
 								       echo fileContents
 								        echo "bbbbbbbbbbbbbbbbbbbb"
+								        }
 								      
 						    
 					           }
