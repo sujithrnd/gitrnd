@@ -4,27 +4,32 @@ pipeline{
 			
 		 
 
-         stage('save log build') {
-				    steps {
-				     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
-				    echo env.JOB_NAME
-				    
-				    
-				     echo "bbbbb"
-						      
-						        echo "111111111111111111111"
-						        echo currentBuild.rawBuild.log
-						       
-						          echo "2222222222222222222222"
-						          script{
-						            def logContent = Jenkins.getInstance().getItemByFullName(System.getenv("JOB_NAME")).getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER"))).logFile.text
-						            // copy the log in the job's own workspace
-						            writeFile file: "buildlog.txt", text: currentBuild.rawBuild.log
-						            }
-						      
-				    }
-			}
-   }	  
+		         stage('save log build') {
+						    steps {
+						     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
+						    echo env.JOB_NAME
+						    
+						    
+						     echo "bbbbb"
+								      
+								        echo "111111111111111111111"
+								      
+								       echo  ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
+								       cat ${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log >> log.txt
+								       
+								        
+								      
+						    
+					           }
+		           }
+           }
+   
+   post {
+        always {
+            archiveArtifacts artifacts: 'target/*', onlyIfSuccessful: false
+        }
+    }
+    	  
 
  
     
