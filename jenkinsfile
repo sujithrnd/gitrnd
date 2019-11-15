@@ -17,7 +17,8 @@ pipeline{
 								       echo  env.JENKINS_HOME
 								        echo "111111111111111111111.11111"
 								      // echo  env.JENKINS_HOME\jobs\env.JOB_NAME\builds\env.BUILD_NUMBER\log >> log.txt
-								      bat type env.JENKINS_HOME/jobs/env.JOB_NAME/builds/env.BUILD_NUMBER/log > log.txt	
+								     //bat type env.JENKINS_HOME/jobs/env.JOB_NAME/builds/env.BUILD_NUMBER/log > log.txt
+								     bat dir	
 								      bat type C:\Users\skarthikeyan\.jenkins\jobs\Pipeline\builds\30\log >> log.txt				       
 								      
 								       
