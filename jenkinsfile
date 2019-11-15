@@ -13,7 +13,7 @@ pipeline{
 				     echo "bbbbb"
 						      
 						        echo "111111111111111111111"
-						        echocurrentBuild.rawBuild.log
+						        echo currentBuild.rawBuild.log
 						       
 						          echo "2222222222222222222222"
 						          script{
