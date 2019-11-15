@@ -32,6 +32,7 @@ pipeline{
          stage('save log build') {
 				    steps {
 						        script {
+						        echo "haiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
 						            def logContent = Jenkins.getInstance()
 						                .getItemByFullName(System.getenv("JOB_NAME"))
 						                .getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER")))
