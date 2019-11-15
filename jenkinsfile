@@ -8,8 +8,7 @@ pipeline{
 				    steps {
 				     echo "aaaaaaaaaaaaaaaaaaaaaaaaa"
 				    echo env.JOB_NAME
-				    String job=env.JOB_NAME
-				    String buildNum=env.BUILD_NUMBER
+				    
 				     echo job
 				     echo buildNum
 				     echo "bbbbb"
