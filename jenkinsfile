@@ -33,6 +33,7 @@ pipeline{
 				    steps {
 						        script {
 						        echo "haiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+						        echo build.getBuildVariables().get('JOB_NAME')
 						            def logContent = Jenkins.getInstance()
 						                .getItemByFullName(System.getenv("JOB_NAME"))
 						                .getBuildByNumber(Integer.parseInt(System.getenv("BUILD_NUMBER")))
