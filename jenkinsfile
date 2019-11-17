@@ -21,7 +21,7 @@ pipeline{
 								     // println "wrirint&&&&&"
 								     // println fileContents.txt
 								     echo 1111111
-								      echo  env.JENKINS_HOME
+								      echo  "${env.JENKINS_HOME}"
 								      echo 222222222222222222222222222222
 								        }
 								         
