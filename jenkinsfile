@@ -3,34 +3,16 @@ pipeline{
 		stages{
 			
 		 
-
-		         stage('save log build') {
-						    steps {
-						 
-								      
-								        echo "aaaaaaaaaaaaaaaaaaa.1"
-								      
-								       echo  env.JENKINS_HOME
-								       
-								      // echo  env.JENKINS_HOME\jobs\env.JOB_NAME\builds\env.BUILD_NUMBER\log >> log.txt
-								     //bat type env.JENKINS_HOME/jobs/env.JOB_NAME/builds/env.BUILD_NUMBER/log > log.txt
-								    // bat dir	
-								   //   bat echo  C:\Users\skarthikeyan\.jenkins\jobs\Pipeline\builds\30\log >log.txt				       
-								      script{
-								     // String fileContents = new File(env.JENKINS_HOME+"/jobs/"+env.JOB_NAME+"/builds/"+env.BUILD_NUMBER+"/log")
-								     // println "wrirint&&&&&"
-								     // println fileContents.txt
-								     echo 1111111
-								      echo  "${env.JENKINS_HOME}"
-								      echo 222222222222222222222222222222
-								        }
-								         
-								        echo "bbbbbbbbbbbbbbbbbbbb"
-								      
-						    
-					           }
-		           }
-           }
+			stage('save log build') {
+			    steps {
+			        script {
+			            def logContent = Jenkins.getInstance().getItemByFullName(env.JOB_NAME).getBuildByNumber( Integer.parseInt(env.BUILD_NUMBER)).logFile.text
+			            // copy the log in the job's own workspace
+			            writeFile file: "buildlog.txt", text: logContent
+			        }//step
+			    }
+		  }//stage ###
+      }//stages 
    
    post {
         always {
