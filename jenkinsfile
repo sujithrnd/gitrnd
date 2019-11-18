@@ -1,7 +1,34 @@
 pipeline{
  agent any
 		stages{
-			
+			             stage('Compile Stage'){
+				 steps {
+					 withMaven(maven : 'Maven'){
+					 bat 'mvn clean compile'
+				    }
+				 
+			      }
+			  }
+			  
+			 stage('Testing Stage'){
+				 steps {
+					withMaven(maven : 'Maven'){
+					   bat 'mvn test'
+				    }
+				 
+			      }
+			  }
+			  
+			  stage('Deployment Stage') {
+				 steps {
+					withMaven(maven : 'Maven'){
+					 bat 'mvn deploy'
+				    }
+				 
+			      }
+			 }
+			 
+			 
 		 
 			stage('save log build') {
 			    steps {
@@ -9,9 +36,9 @@ pipeline{
 			            def logContent = Jenkins.getInstance().getItemByFullName(env.JOB_NAME).getBuildByNumber( Integer.parseInt(env.BUILD_NUMBER)).logFile.text
 			            // copy the log in the job's own workspace
 			            writeFile file: "buildlog.txt", text: logContent
-			        }//step
-			    }
-		  }//stage ###
+			        }//script
+			    }//step
+		   }//stage
       }//stages 
    
    post {
