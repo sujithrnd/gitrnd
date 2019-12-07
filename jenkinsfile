@@ -30,9 +30,9 @@ pipeline{
 			 
 			 
 		 
-			stage('save log build') {
+			//stage('save log build') {
 			    
-			    steps {
+			   // steps {
 			        
 			        //script {
 			          // def logContent = Jenkins.getInstance().getItemByFullName(env.JOB_NAME).getBuildByNumber( Integer.parseInt(env.BUILD_NUMBER)).logFile.text
@@ -40,9 +40,9 @@ pipeline{
 			            //writeFile file:"buildlog.txt", text: logContent
 			      //  }//script
 			        
-			    }//step
+			  //  }//step
 			    
-		   }//stage
+		  // }//stage
 		  
       }//stages 
    
