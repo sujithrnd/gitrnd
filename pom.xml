@@ -9,7 +9,7 @@
 
 	<name>test</name>
 	<url>http://maven.apache.org</url>
-
+	<type>test-jar</type>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
