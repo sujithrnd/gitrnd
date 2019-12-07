@@ -20,7 +20,9 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>file:///C:/Sujith/OtherTeamSupport/PipeLine/Remote_Repo</url>
+         <!--<url>file:///C:/Sujith/OtherTeamSupport/PipeLine/Remote_Repo</url>-->
+	       <url>file:///M:/IT/sujith/Deployment</url>       
+	       
        </repository>
    </distributionManagement>
    
