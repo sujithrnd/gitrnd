@@ -10,8 +10,9 @@ pipeline{
 				 
 			      }
 			  }
-			echo 'Test ####################'  
+		 
 			 stage('Testing Stage'){
+			 echo 'Test ####################' 
 				 steps {
 					withMaven(maven : 'Maven'){
 					   bat 'mvn test'
@@ -19,8 +20,9 @@ pipeline{
 				 
 			      }
 			  }
-			    echo 'Install   ####################'  
+			   
 			  stage('Deployment Stage') {
+			   echo 'Install   ####################'  
 				 steps {
 					withMaven(maven : 'Maven'){
 					 bat 'mvn install'
@@ -29,8 +31,9 @@ pipeline{
 			      }
 			 }
 			 
-			 // echo 'Deployment  ####################'  
+			 
 			 // stage('Deployment Stage') {
+			   echo 'Deployment  ####################'  
 			//	 steps {
 				//	withMaven(maven : 'Maven'){
 				//	 bat 'mvn deploy'
