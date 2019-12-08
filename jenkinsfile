@@ -36,15 +36,15 @@ pipeline{
 			 }
 			 
 			 
-			 // stage('Deployment Stage') {
-			   //echo 'Deployment  ####################'  
-			//	 steps {
-				//	withMaven(maven : 'Maven'){
-				//	 bat 'mvn deploy'
-				//    }
+			  stage('Deployment Stage') {
+			   echo 'Deployment  ####################'  
+				 steps {
+					withMaven(maven : 'Maven'){
+					 bat 'mvn deploy'
+			   }
 				 
-			     // }
-			// }
+			      }
+			 }
 			 
 			 
 		 
