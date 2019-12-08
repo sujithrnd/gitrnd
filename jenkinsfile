@@ -24,10 +24,10 @@ pipeline{
 			      }
 			  }
 			   
-			  stage('Deployment Stage') {
+			  stage('Install Stage') {
 			 
 				 steps {
-				  println 'Deploymnet ##################'
+				  println 'Install ##################'
 					withMaven(maven : 'Maven'){
 					 bat 'mvn install'
 				    }
