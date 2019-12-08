@@ -34,7 +34,7 @@ pipeline{
 			 
 			 
 			 // stage('Deployment Stage') {
-			   echo 'Deployment  ####################'  
+			   //echo 'Deployment  ####################'  
 			//	 steps {
 				//	withMaven(maven : 'Maven'){
 				//	 bat 'mvn deploy'
