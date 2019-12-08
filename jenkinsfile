@@ -19,6 +19,16 @@ pipeline{
 				 
 			      }
 			  }
+			    echo 'Install   ####################'  
+			  stage('Deployment Stage') {
+				 steps {
+					withMaven(maven : 'Maven'){
+					 bat 'mvn install'
+				    }
+				 
+			      }
+			 }
+			 
 			  echo 'Deployment  ####################'  
 			  stage('Deployment Stage') {
 				 steps {
