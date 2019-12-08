@@ -3,8 +3,9 @@ pipeline{
 		stages{
 		
 			      stage('Compile Stage'){
-				   println 'Compile ##################'  
+				  
 				 steps {
+				  println 'Compile ##################'  
 					 withMaven(maven : 'Maven'){
 					 bat 'mvn clean compile'
 				    }
@@ -13,8 +14,9 @@ pipeline{
 			  }
 		 
 			 stage('Testing Stage'){
-			  println 'Test ##################'
+			  
 				 steps {
+				 println 'Test ##################'
 					withMaven(maven : 'Maven'){
 					   bat 'mvn test'
 				    }
@@ -23,8 +25,9 @@ pipeline{
 			  }
 			   
 			  stage('Deployment Stage') {
-			  println 'Deploymnet ##################'
+			 
 				 steps {
+				  println 'Deploymnet ##################'
 					withMaven(maven : 'Maven'){
 					 bat 'mvn install'
 				    }
