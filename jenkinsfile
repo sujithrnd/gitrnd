@@ -29,7 +29,7 @@ pipeline{
 			      }
 			 }
 			 
-			  echo 'Deployment  ####################'  
+			 /* echo 'Deployment  ####################'  
 			  stage('Deployment Stage') {
 				 steps {
 					withMaven(maven : 'Maven'){
@@ -37,7 +37,7 @@ pipeline{
 				    }
 				 
 			      }
-			 }
+			 }*/
 			 
 			 
 		 
